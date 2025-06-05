@@ -2,8 +2,22 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Đặt Combo & Tour Mộc Châu</title>
+  <title>Tour Mộc Châu | Xe Limousine - Combo Giá Tốt | Mộc Châu Trips</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Đặt tour Mộc Châu 2N1Đ: Xe Limousine, tour gia đình, ưu đãi voucher hấp dẫn. Trải nghiệm nghỉ dưỡng, cảnh đẹp, ẩm thực đặc sản. Hotline 0971050324.">
+  <meta name="keywords" content="Tour Mộc Châu, du lịch Mộc Châu, combo Mộc Châu, xe limousine Mộc Châu, tour gia đình Mộc Châu, voucher du lịch, đặt tour online">
+  <meta property="og:title" content="Tour Mộc Châu - Xe Limousine, Combo ưu đãi giá tốt | Mộc Châu Trips">
+  <meta property="og:description" content="Khám phá Mộc Châu trọn vẹn với combo tour, xe cao cấp, ưu đãi hấp dẫn. Đặt online - Nhận ngay voucher.">
+  <meta property="og:url" content="https://hquan01.github.io/mocchautrips/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.imgur.com/uKKVhKS.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tour Mộc Châu - Xe Limousine, Combo ưu đãi giá tốt">
+  <meta name="twitter:description" content="Khám phá tour du lịch Mộc Châu, xe Limousine, ưu đãi voucher hấp dẫn.">
+  <meta name="twitter:image" content="https://i.imgur.com/uKKVhKS.jpeg">
+  <link rel="canonical" href="https://hquan01.github.io/mocchautrips/" />
+  <link rel="icon" type="image/png" href="https://i.imgur.com/uKKVhKS.jpeg" />
+
   <style>
     :root {
       --main-color: #10b981;
@@ -21,14 +35,14 @@
     .banner {
       background: linear-gradient(110deg, #0e766e70 60%, #fff7 100%),
         url('https://i.imgur.com/lixdAXs.png') center/cover no-repeat;
-      min-height: 240px;
+      min-height: 180px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: #194538;
-      padding: 36px 10px 32px 10px;
+      padding: 16px 10px 16px 10px;
       border-radius: 0 0 22px 22px;
       box-shadow: 0 6px 32px #10b98114;
     }
@@ -251,7 +265,7 @@
       .combo-list {flex-direction:column;align-items:center;}
       .combo {width:97%;}
       .banner h1 {font-size:1.05rem;}
-      .banner {min-height:130px;padding:17px 3vw 16px 3vw;}
+      .banner {min-height:100px;padding:10px 3vw 10px 3vw;}
     }
     @media (max-width: 500px) {
       .combo img {height:96px;}
@@ -260,9 +274,9 @@
 </head>
 <body>
   <div class="banner">
-    <h1></h1>
+    <h1>Combo Tour Mộc Châu - Ưu đãi hấp dẫn, đặt là có quà!</h1>
     <p>
-      
+      Khám phá Mộc Châu: xe limousine, tour trọn gói, voucher giảm giá – Đăng ký ngay, nhận quà siêu xịn!
     </p>
     <a href="#form"><button class="cta-btn">Nhận Ưu Đãi Ngay Hôm Nay</button></a>
   </div>
@@ -397,7 +411,7 @@ form.addEventListener('submit', function(e) {
         fanpageLink.addEventListener('click', function() {
           setTimeout(function() {
             document.getElementById('spin-section').style.display = "block";
-          }, 1000); // đợi 1 giây cho tự nhiên
+          }, 1200);
         });
       }
       var spinBtn = document.getElementById('spin-btn');
@@ -418,7 +432,6 @@ form.addEventListener('submit', function(e) {
             "🎉 Chúc mừng! Bạn nhận được <b>1 voucher giảm 10.000đ</b> khi đặt tour tại Mộc Châu Trips!",    // 24%
             "🎉 Chúc mừng! Bạn nhận được <b>1 voucher giảm 5%</b> tổng giá trị tour khi đặt tour tại Mộc Châu Trips!" // 1%
           ];
-          // Tỉ lệ phần trăm cho từng giải, tổng 63
           const weights = [1, 3, 10, 24, 24, 1];
           let sum = 0, selected = 0, random = Math.random() * 63;
           for(let i=0; i<weights.length; i++) {
