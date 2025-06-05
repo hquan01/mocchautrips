@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đặt Combo & Tour Mộc Châu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --main-color: #10b981;
+      --accent: #e11d48;
+      --card-bg: #f9fafb;
+      --radius: 18px;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f3f4f6;
+      color: #222;
+      min-height: 100vh;
+    }
+    .banner {
+      background: linear-gradient(110deg, #0e766e70 60%, #fff7 100%),
+        url('https://i.imgur.com/lixdAXs.png') center/cover no-repeat;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #194538;
+      padding: 36px 10px 32px 10px;
+      border-radius: 0 0 22px 22px;
+      box-shadow: 0 6px 32px #10b98114;
+    }
+    .banner h1 {
+      font-size: 1.28rem;
+      font-weight: bold;
+      margin: 0 0 7px 0;
+      text-shadow: 0 2px 8px #fff8;
+      letter-spacing: 1px;
+    }
+    .banner p {
+      font-size: 1rem;
+      margin: 0 0 18px 0;
+      text-shadow: 0 2px 6px #fff7;
+    }
+    .cta-btn {
+      background: var(--main-color);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 36px;
+      font-size: 1rem;
+      box-shadow: 0 6px 32px #10b98133;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.18s;
+      outline: none;
+    }
+    .cta-btn:hover, .cta-btn:focus {
+      background: #059669;
+      transform: scale(1.04);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: -40px auto 0;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px #0001;
+      padding: 28px 8px 24px 8px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .combo-list {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .combo {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px #10b98110;
+      width: 270px;
+      min-width: 170px;
+      max-width: 98vw;
+      text-align: center;
+      padding: 20px 10px 18px 10px;
+      border: 1.5px solid #e0e7ef;
+      transition: box-shadow .18s, border-color .18s;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .combo:hover {
+      border-color: var(--main-color);
+      box-shadow: 0 6px 22px #10b98122;
+    }
+    .combo img {
+      width: 95%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 9px;
+      box-shadow: 0 4px 12px #0001;
+    }
+    .combo h3 {
+      margin: 10px 0 2px 0;
+      font-size: 1.09rem;
+      color: var(--main-color);
+      font-weight: 600;
+    }
+    .combo .price {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.02rem;
+      margin-bottom: 7px;
+    }
+    .combo p {
+      font-size: 0.98rem;
+      margin-bottom: 0;
+      color: #444e;
+      min-height: 38px;
+    }
+    .detail-btn {
+      background: #f59e42;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 22px;
+      font-size: 0.98rem;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 2px 8px #0001;
+      transition: background 0.2s;
+    }
+    .detail-btn:hover {
+      background: #ea580c;
+    }
+    .combo-detail {
+      background: #f5f8fa;
+      border-radius: 8px;
+      padding: 10px 10px 6px 18px;
+      margin-top: 13px;
+      box-shadow: 0 2px 8px #10b98112;
+      border: 1px solid #cbd5e1;
+      animation: fadeIn 0.4s;
+    }
+    @keyframes fadeIn {
+      from {opacity:0;transform:translateY(-10px);}
+      to {opacity:1;transform:none;}
+    }
+
+    form {
+      margin-top: 20px;
+      background: #f8fafc;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px #10b98111;
+      padding: 24px 16px 12px 16px;
+      max-width: 430px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    form h2 {
+      color: var(--main-color);
+      margin-top: 0;
+      font-size: 1.18rem;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 3px;
+      font-weight: 500;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 2px;
+      border-radius: 8px;
+      border: 1.2px solid #ddd;
+      font-size: 1rem;
+      box-sizing: border-box;
+      background: #fff;
+      transition: border-color .17s;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--main-color);
+    }
+    button[type=submit] {
+      background: var(--main-color);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 0;
+      width: 100%;
+      font-size: 1.08rem;
+      margin-top: 18px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: .18s;
+    }
+    button[type=submit]:hover, button[type=submit]:focus {background:#059669;}
+    #result {
+      margin-top: 14px;
+      color: var(--main-color);
+      text-align: center;
+      min-height: 20px;
+      font-weight: 500;
+    }
+    .footer {
+      margin: 34px 0 0 0;
+      text-align: center;
+      color: #64748b;
+      font-size: 1rem;
+    }
+    .footer a {color:var(--main-color);text-decoration:none;}
+    .footer a:hover {text-decoration:underline;}
+    .hotline-bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: #10b981e8;
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      align-items: center;
+      padding: 3px 0;
+      z-index: 999;
+    }
+    .hotline-bar a {
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 8px;
+      border-radius: 7px;
+      transition:.18s;
+    }
+    .hotline-bar a:hover {background:#059669;}
+
+    @media (max-width: 800px) {
+      .container {padding:12px 1vw;}
+      .combo-list {flex-direction:column;align-items:center;}
+      .combo {width:97%;}
+      .banner h1 {font-size:1.05rem;}
+      .banner {min-height:130px;padding:17px 3vw 16px 3vw;}
+    }
+    @media (max-width: 500px) {
+      .combo img {height:96px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <h1></h1>
+    <p>
+      
+    </p>
+    <a href="#form"><button class="cta-btn">Nhận Ưu Đãi Ngay Hôm Nay</button></a>
+  </div>
+  <div class="container">
+    <h2 style="color:#10b981;text-align:center;">Chọn Combo/Tour Hot</h2>
+    <div class="combo-list">
+      <div class="combo">
+        <img src="https://i.imgur.com/uKKVhKS.jpeg" alt="Tour 2N1Đ">
+        <h3>
+          Tour Mộc Châu 2N1Đ
+          <span style="color:#e11d48;font-size:0.95em;">(Sắp ra mắt!)</span>
+        </h3>
+        <div class="price">0đ/người</div>
+        <p>
+          Trải nghiệm Mộc Châu trọn vẹn: Chinh phục cao nguyên xanh mướt, thác Dải Yếm tuyệt đẹp, đồi chè bạt ngàn, thử thách tại cầu kính Bạch Long nổi tiếng và khám phá làng nguyên thủy độc đáo.<br>
+        </p>
+      </div>
+      <div class="combo">
+        <img src="https://i.imgur.com/qHkRLE4.jpeg" alt="Combo Mộc Châu 2N1Đ">
+        <h3>Combo Mộc Châu 2N1Đ</h3>
+        <div class="price">1.099.000đ/người</div>
+        <button class="detail-btn" onclick="toggleDetail(0)">Xem chi tiết</button>
+        <div class="combo-detail" style="display:none; text-align:left; margin-top:14px; font-size:0.97rem;">
+          <b>Giá Combo đã bao gồm:</b>
+          <ul style="margin:6px 0 0 15px; padding-left:0;">
+            <li>Vé phương tiện di chuyển khứ hồi (Xe Limousine, Xe Giường Nằm Cabin) tùy theo chương trình combo</li>
+            <li>Thuế, phí sân bay hoặc các phụ phí vận chuyển theo quy định</li>
+            <li>Phí an ninh du lịch và phụ thu nhiên liệu (nếu có)</li>
+            <li>Lưu trú tiêu chuẩn theo chương trình (phòng đơn/1 giường và phòng đôi/2 giường)</li>
+            <li>Xe máy di chuyển (24h)</li>
+            <li>Lịch trình thăm quan chi tiết</li>
+            <li>1 bữa sáng (tại home) và 1 bữa trưa (tại bếp Mệ Tình )</li>
+            <li>Miễn phí nước lọc và cafe trong phòng</li>
+            <li>Voucher 5% Vé tham quan các điểm du lịch (Cầu Kính Bạch Long, Thác Dải Yếm, Happy Land, Mocha Hill, Trại Hoa Vàng)</li>
+            <li>Bảo hiểm du lịch suốt tuyến</li>
+            <li>Hỗ trợ đặt taxi, xe du lịch 7-9-16 chỗ giá rẻ</li>
+            <li>Voucher 5% Mua sắm tại Mộc Châu Food</li>
+          </ul>
+        </div>
+      </div>
+      <div class="combo">
+        <img src="https://i.imgur.com/SrzRXyB.jpeg" alt="Tour gia đình">
+        <h3>Tour Trọn Gói Gia Đình</h3>
+        <div class="price">Liên hệ</div>
+        <p>Tour riêng cho nhóm, bao xe, lịch trình linh hoạt, ưu đãi đoàn đông.</p>
+      </div>
+    </div>
+
+    <form id="form">
+      <h2 id="form">Đăng Ký & Nhận Tư Vấn Tour/Combo</h2>
+      <label for="fullname">Họ tên *</label>
+      <input type="text" id="fullname" name="fullname" required placeholder="Nhập họ và tên của bạn">
+      <label for="phone">Số điện thoại *</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{9,12}" required placeholder="0912345678">
+      <label for="option">Chọn combo/tour *</label>
+      <select id="option" name="option" required>
+        <option value="">--Chọn combo/tour--</option>
+        <option>Tour Mộc Châu 2N1Đ</option>
+        <option>Combo Mộc Châu 2N1Đ</option>
+        <option>Tour trọn gói gia đình</option>
+      </select>
+      <label for="date">Ngày khởi hành *</label>
+      <input type="date" id="date" name="date" required>
+      <label for="note">Ghi chú thêm *</label>
+      <textarea id="note" name="note" rows="2" required placeholder="Yêu cầu ghi rõ số người lớn, trẻ em và yêu cầu riêng của bạn..."></textarea>
+      <button type="submit">Gửi đăng ký</button>
+      <div id="result"></div>
+    </form>
+
+    <div id="next-steps" style="display:none; margin-top:22px;">
+      <div style="color:#10b981;font-weight:600;">
+        ✅ Đăng ký thành công!
+      </div>
+      <div style="margin:14px 0 8px 0;">
+        <b>Bước tiếp theo:</b> Vui lòng 
+        <a id="fanpage-link" href="https://www.facebook.com/mocchautrips" target="_blank" style="color:#1877f2;font-weight:bold;text-decoration:underline;">THEO DÕI FANPAGE Mộc Châu Trips</a>
+        để nhận lượt quay thưởng.
+      </div>
+      <div id="spin-section" style="display:none;margin-top:14px;">
+        <button id="spin-btn" style="background:#e11d48;color:#fff;padding:12px 28px;border:none;border-radius:10px;font-size:1.12rem;font-weight:600;cursor:pointer;">NHẬN QUÀ NGAY</button>
+        <div id="spin-result" style="margin-top:20px;font-size:1.1rem;"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <b>Hotline:</b> <a href="tel:0971050324">0971050324</a> |
+      Zalo: <a href="https://zalo.me/0971050324" target="_blank">0971050324</a> |
+      Facebook: <a href="https://www.facebook.com/mocchautrips" target="_blank">MocChauTrips</a><br>
+      © 2025 Mộc Châu Trips
+    </div>
+
+  <div style="height:38px;"></div>
+  <div class="hotline-bar">
+    <a href="tel:0971050324">📞 Gọi ngay</a>
+    <a href="https://zalo.me/0971050324" target="_blank">💬 Zalo</a>
+    <a href="https://www.facebook.com/mocchautrips" target="_blank">👍 Facebook</a>
+  </div>
+  <script>
+    // Toggle chi tiết combo
+    function toggleDetail(idx) {
+      var detail = document.querySelectorAll('.combo-detail')[idx];
+      var btn = document.querySelectorAll('.detail-btn')[idx];
+      var isShown = detail.style.display === 'block';
+      detail.style.display = isShown ? 'none' : 'block';
+      btn.innerText = isShown ? 'Xem chi tiết' : 'Ẩn chi tiết';
+    }
+    // Gửi form về Google Sheet
+    const scriptURL = "https://script.google.com/macros/s/AKfycbz6qJotkzy19rVNAPC0QXfgtc7-hyknETsjHFvkSXz6A2wmjeXYp-td1oUbw4IUfQQ/exec";
+    const form = document.getElementById('form');
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('result').innerText = "⏳ Đang gửi thông tin...";
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => response.text())
+    .then(result => {
+      if (result === "EXISTED") {
+        document.getElementById('result').innerHTML = "Số điện thoại này đã tham gia quay thưởng rồi.<br>Vui lòng sử dụng số khác.";
+      } else {
+        form.style.display = "none";
+        document.getElementById('result').innerText = "";
+        document.getElementById('next-steps').style.display = "block";
+      }
+    })
+    .catch(error => {
+      document.getElementById('result').innerText = '❌ Lỗi gửi đăng ký. Vui lòng thử lại hoặc liên hệ hotline.';
+    });
+});
+    // Khi click THEO DÕI FANPAGE thì hiện nút quay thưởng
+    document.addEventListener('DOMContentLoaded', function() {
+      var fanpageLink = document.getElementById('fanpage-link');
+      if (fanpageLink) {
+        fanpageLink.addEventListener('click', function() {
+          setTimeout(function() {
+            document.getElementById('spin-section').style.display = "block";
+          }, 1000); // đợi 1 giây cho tự nhiên
+        });
+      }
+      var spinBtn = document.getElementById('spin-btn');
+      if (spinBtn) {
+        spinBtn.addEventListener('click', function() {
+          const phone = document.getElementById('phone').value.trim();
+          // Đảm bảo mỗi số ĐT chỉ nhận 1 lần
+          if (localStorage.getItem("mct_gifted_" + phone)) {
+            document.getElementById('spin-result').innerHTML = "Số điện thoại này đã nhận quà rồi.<br>Vui lòng sử dụng số khác.";
+            return;
+          }
+          // Danh sách phần thưởng & tỉ lệ
+          const prizes = [
+            "🎉 Chúc mừng! Bạn nhận được <b>1 voucher giảm 50.000đ</b> khi đặt tour tại Mộc Châu Trips!",    // 1%
+            "🎉 Chúc mừng! Bạn nhận được <b>1 voucher giảm 40.000đ</b> khi đặt tour tại Mộc Châu Trips!",    // 3%
+            "🎉 Chúc mừng! Bạn nhận được <b>1 voucher giảm 30.000đ</b> khi đặt tour tại Mộc Châu Trips!",    // 10%
+            "🎉 Chúc mừng! Bạn nhận được <b>1 voucher giảm 20.000đ</b> khi đặt tour tại Mộc Châu Trips!",    // 24%
+            "🎉 Chúc mừng! Bạn nhận được <b>1 voucher giảm 10.000đ</b> khi đặt tour tại Mộc Châu Trips!",    // 24%
+            "🎉 Chúc mừng! Bạn nhận được <b>1 voucher giảm 5%</b> tổng giá trị tour khi đặt tour tại Mộc Châu Trips!" // 1%
+          ];
+          // Tỉ lệ phần trăm cho từng giải, tổng 63
+          const weights = [1, 3, 10, 24, 24, 1];
+          let sum = 0, selected = 0, random = Math.random() * 63;
+          for(let i=0; i<weights.length; i++) {
+            sum += weights[i];
+            if(random < sum) { selected = i; break; }
+          }
+          localStorage.setItem("mct_gifted_" + phone, "1");
+          document.getElementById('spin-result').innerHTML = prizes[selected];
+        });
+      }
+    });
+  </script>
+</body>
+</html>
