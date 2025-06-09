@@ -16,12 +16,12 @@
   <meta property="og:description" content="Khám phá Mộc Châu trọn vẹn với combo tour, xe cao cấp, ưu đãi hấp dẫn. Đặt online - Nhận ngay voucher.">
   <meta property="og:url" content="https://mocchautrips.online/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://i.imgur.com/Vjr1862.png">
+  <meta property="og:image" content="https://i.imgur.com/uKKVhKS.jpeg">
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tour Mộc Châu - Combo Ưu Đãi Xe Limousine">
   <meta name="twitter:description" content="Đặt tour Mộc Châu 2N1Đ, combo gia đình, xe riêng limousine giá tốt, nhận voucher ưu đãi.">
-  <meta name="twitter:image" content="https://i.imgur.com/Vjr1862.png">
+  <meta name="twitter:image" content="https://i.imgur.com/uKKVhKS.jpeg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="https://i.imgur.com/uKKVhKS.jpeg" />
@@ -462,11 +462,79 @@
             sum += weights[i];
             if(random < sum) { selected = i; break; }
           }
-          localStorage.setItem("mct_gifted_" + phone, "1");
+                    localStorage.setItem("mct_gifted_" + phone, "1");
           document.getElementById('spin-result').innerHTML = prizes[selected];
         });
       }
     });
   </script>
+</div> <!-- kết thúc hotline-bar -->
+
+<!-- BẮT ĐẦU PHẦN FAQ -->
+<div itemscope itemtype="https://schema.org/FAQPage" style="max-width:800px;margin:0 auto 32px;padding:22px 18px 0 18px; background:#fff; border-radius:18px; box-shadow:0 2px 12px #10b98111;">
+  <h2 style="color:#10b981;text-align:center;margin-bottom:18px">Câu hỏi thường gặp về Tour/Combo Mộc Châu</h2>
+
+  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question" class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span style="font-weight:bold;color:#e11d48;">❓</span> Làm sao đặt xe Limousine đi Mộc Châu?
+    </button>
+    <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+      <p itemprop="text">Bạn có thể đặt trực tiếp trên web hoặc gọi/Zalo: <b style="color:#10b981;">0971050324</b> (hỗ trợ 24/7).</p>
+    </div>
+  </div>
+
+  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question" class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span style="font-weight:bold;color:#e11d48;">❓</span> Combo 2N1Đ bao gồm những gì?
+    </button>
+    <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+      <p itemprop="text">Bao gồm xe, khách sạn, vé tham quan, bữa sáng & trưa, voucher ưu đãi dịch vụ Mộc Châu.</p>
+    </div>
+  </div>
+
+  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question" class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span style="font-weight:bold;color:#e11d48;">❓</span> Có hoàn vé, đổi ngày không?  
+    </button>
+    <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+      <p itemprop="text">Bạn được hoàn/đổi ngày miễn phí nếu báo trước 48h xuất phát.</p>
+    </div>
+  </div>
+
+  <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question" class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span style="font-weight:bold;color:#e11d48;">❓</span> Đặt xe cho đoàn đông có ưu đãi gì không?
+    </button>
+    <div class="faq-answer" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+      <p itemprop="text">Đặt từ 6 khách trở lên sẽ được tặng voucher giảm giá và ưu đãi phòng riêng cho đoàn.</p>
+    </div>
+  </div>
+
+</div>
+<!-- KẾT THÚC PHẦN FAQ -->
+
+<!-- CSS FAQ -->
+<style>
+.faq-item {margin-bottom:16px;}
+.faq-question {
+  background: #f8fafc; color:#194538; font-size:1.07rem; font-weight:600;
+  border: none; border-radius:9px; width:100%; text-align:left; padding:12px 18px;
+  margin-bottom:3px; cursor:pointer; box-shadow: 0 1px 6px #10b9810a; transition:.15s;
+}
+.faq-question:hover {background:#e7f9f5;}
+.faq-answer {display:none; padding:10px 20px 4px 20px; color:#444;}
+.faq-item.active .faq-answer {display:block;}
+</style>
+
+<!-- JS FAQ accordion -->
+<script>
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  item.classList.toggle('active');
+}
+</script>
+
+
 </body>
 </html>
+
